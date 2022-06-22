@@ -1,0 +1,44 @@
+﻿@model hirinchallenge.Models.search
+
+<style>
+    .yuk {
+        height: 50px;
+    }
+
+    .genislik {
+        width: 100%;
+    }
+
+    .search-form {
+        border-radius: 30px 0px 0px 30px;
+        /*border-radius:Top-left, Top-right, Bottom-right, Bottom-left;*/
+    }
+    /*to cange only one form and not all give unique class name like  class="search-form" */
+    .search-btn {
+        border-radius: 0px 30px 30px 0px;
+        cursor: pointer;
+    }
+</style>
+
+
+    @using (Html.BeginForm("searchevent", "Home", FormMethod.Post, new { id = "Form5", enctype = "multipart/form-data" }))
+    {
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="input-group mt-3 pl-2">
+                @Html.HiddenFor(model => model.id, new { id = "hdnFlag" })
+                @Html.HiddenFor(model => model.id, new { id = "hdnFlag" })
+
+                @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control genislik yuk py-2 rounded-pill mr-1 ml-2 pr-5", Enter = "document.getElementById('Form5').submit();", @Value = TempData["isimler"], placeholder = "Search" } })
+                @*<input class="form-control py-2 rounded-pill mr-1 ml-2 pr-5" style="height:50px;" type="search" placeholder="Search">*@
+
+
+                <span class="input-group-append">
+                    <button class="btn rounded-pill border-0 ml-n5" style="z-index:5;" type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+    
+    </div>
+    }

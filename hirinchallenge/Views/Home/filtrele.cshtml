@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "filtrele";
+}
+<hr />
+
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12 pt-4">
+
+            <span style="font-size:25px;">Filtreli Arama</span>
+            <hr />
+        </div>
+        @foreach (hirinchallenge.Models.events en in ViewBag.filters)
+        {
+            <div class="col-lg-3 col-md-4 col-sm-4 col-6 handmade">
+
+                <ul class="list-group-item">
+                    <li class="list-unstyled">
+                        <a href="@Url.RouteUrl(new {@controller = "Home", @action = "Eventsdetail",@id=en.eventid })">
+                            @if (en.eventphoto == "")
+                            {
+                                <img src="~/img/nophoto.jpg" height="120" class="img-fluid align-items-center pl-5 pr-5" />
+                            }
+                            else
+                            {
+                                <img src="~/img/@en.eventphoto" height="120" class="img-fluid align-items-center pl-5 pr-5" />
+                            }
+                        </a>
+
+                    </li>
+                </ul>
+
+
+            </div>
+        }
+    </div>
+</div>
+<br />

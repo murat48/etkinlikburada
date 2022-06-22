@@ -1,0 +1,139 @@
+﻿
+@{
+    ViewBag.Title = "searchevent";
+}
+
+<hr />
+
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-6">
+            @if (Enumerable.Count(ViewBag.veriler) == 0)
+            {
+                <img src="../../img/nophoto.jpg" height="300" class="img-fluid align-items-center pl-5 pr-5" />
+            }
+            else
+            {
+                <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1200px;height:560px;overflow:hidden;visibility:hidden;">
+                    <!-- Loading Screen -->
+                    <div data-u="loading" class="jssorl-009-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+                        <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg" />
+                    </div>
+                    <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1600px;height:560px;overflow:hidden;">
+
+
+                        @foreach (var item in ViewBag.veriler)
+                        {
+                            <div>
+
+
+
+                                <img data-u="image" data-src="../../img/@item.photoname" />
+
+
+                                @*<div data-ts="flat" data-p="1080" style="left:0px;top:0px;width:1600px;height:560px;position:absolute;">
+                                        <div data-to="50% 50%" data-t="13" style="left:100px;top:-20px;width:800px;height:200px;position:absolute;opacity:0;">7
+                                            <div style="left:94px;top:35px;width:480px;height:90px;position:absolute;color:#ffffff;font-family:'Roboto Condensed',sans-serif;font-size:72px;line-height:1.2;">Seo Uyumlu</div>
+                                            <div style="left:307px;top:115px;width:400px;height:50px;position:absolute;color:rgba(74,217,205,0.5);font-family:'Roboto Condensed',sans-serif;font-size:42px;line-height:1.1;text-align:center;background-color:rgba(72,77,76,0.5);">Web Siteleri </div>
+                                        </div>
+                                    </div>*@
+                                <!--<div data-ts="flat" data-p="1080" style="left:0px;top:0px;width:1600px;height:560px;position:absolute;">
+                                <div data-to="50% 50%" data-t="11" style="left: 690px; top:150px; width: 600px; height: 150px; position: absolute; opacity: 1; color:#ffffff; font-family: Georgia,'Times New Roman',Times,serif; font-size: 90px;">Web Sitemize<br />Hoş Geldiniz.</div>-->
+                                @*<img data-to="50% 50%" data-t="15" style="left:780px;top:350px;width:344px;height:157px;position:absolute;opacity:0;max-width:344px;" data-src="../../img/wine-atlantic-ocean.png" />*@
+                                <!--<img data-to="50% 50%" data-t="16" style="left:1100px;top:8px;width:472px;height:80px;position:absolute;opacity:0;max-width:472px;" data-src="../../img/yazilimciburadabeyaz.png" />
+                                </div>-->
+                            </div>
+                        }
+
+                    </div>
+                    <!-- Bullet Navigator -->
+                    <div data-u="navigator" class="jssorb132" style="position:absolute;bottom:24px;right:16px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+                        <div data-u="prototype" class="i" style="width:12px;height:12px;">
+                            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                                <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                            </svg>
+                        </div>
+                    </div>
+                    <!-- Arrow Navigator -->
+                    <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+                        <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                            <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+                        </svg>
+                    </div>
+                    <div data-u="arrowright" class="jssora051" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+                        <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                            <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+                        </svg>
+                    </div>
+
+
+                </div>
+            }
+        </div>
+
+
+        <div class="col-6">
+            @foreach (hirinchallenge.Models.events even in ViewBag.eventdetail)
+            {
+                <p class="text-center">
+                    <b style="font-size:35px;">@even.eventname</b>
+                </p>
+                <br />
+                <p class="text-center">
+                    @if (even.eventprice != 0)
+                    {
+                        <span style="font-size:25px;">Fiyat:  <b>@even.eventprice TL</b></span>
+                    }
+                    else
+                    {
+                        <span style="font-size:25px;">Fiyat:  <b>Ücretsiz</b></span>
+                    }
+                </p>
+                <p class="text-center">
+
+                    <span style="font-size:25px;">Etkinlik Tarihi:  <b>@even.eventdate.ToShortDateString() - @even.eventenddate.ToShortDateString()</b></span>
+                </p>
+                <p class="text-center">
+
+                    <span style="font-size:25px;">Adres:  <b>@even.adres</b></span>
+                </p>
+                <p class="text-center">
+                    @foreach (var cat in ViewBag.catergorydetail)
+                    {
+
+
+                        <a style="font-size:20px;" href="#"><label class="bg-success rounded p-2" style="color:#ffffff">@cat.categoryname</label>  </a>
+                    }
+                </p>
+            }
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="col-12">
+        @foreach (hirinchallenge.Models.events even in ViewBag.eventdetail)
+        {
+            <h2 style="padding-top:10px; font-size:35px;">Detaylar</h2>
+            <hr />
+            <p style="padding-top:10px; font-size:25px;">
+                @even.eventdescription
+
+            </p>
+        }
+    </div>
+</div>
+<div class="container-fluid">
+
+    @foreach (hirinchallenge.Models.events even in ViewBag.eventdetail)
+    {
+        <iframe src="@even.googlemaplink" style="border: 0;margin:0px; height: 430px; width: 100% " allowfullscreen></iframe>
+    }
+</div>
+
+<script type="text/javascript">
+            jssor_1_slider_init();
+</script>

@@ -1,0 +1,675 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{265239E9-A34E-4BAD-9924-DD629CE29651}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>hirinchallenge</RootNamespace>
+    <AssemblyName>hirinchallenge</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44308</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.9\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.9\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.9\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\animate.css" />
+    <Content Include="assets\css\docs.theme.min.css" />
+    <Content Include="assets\img\bird_blue_32.png" />
+    <Content Include="assets\img\download.png" />
+    <Content Include="assets\img\feature-drag.png" />
+    <Content Include="assets\img\feature-modern.png" />
+    <Content Include="assets\img\feature-module.png" />
+    <Content Include="assets\img\feature-options.png" />
+    <Content Include="assets\img\feature-responsive.png" />
+    <Content Include="assets\img\feature-zombie.png" />
+    <Content Include="assets\img\owl-logo.png" />
+    <Content Include="assets\img\twitter_25.png" />
+    <Content Include="assets\js\app.js" />
+    <Content Include="assets\js\foundation.min.js" />
+    <Content Include="assets\js\jssor.slider.min.js" />
+    <Content Include="assets\owlcarousel\assets\ajax-loader.gif" />
+    <Content Include="assets\owlcarousel\assets\owl.carousel.css" />
+    <Content Include="assets\owlcarousel\assets\owl.carousel.min.css" />
+    <Content Include="assets\owlcarousel\assets\owl.theme.default.css" />
+    <Content Include="assets\owlcarousel\assets\owl.theme.default.min.css" />
+    <Content Include="assets\owlcarousel\assets\owl.theme.green.css" />
+    <Content Include="assets\owlcarousel\assets\owl.theme.green.min.css" />
+    <Content Include="assets\owlcarousel\assets\owl.video.play.png" />
+    <Content Include="assets\owlcarousel\owl.carousel.js" />
+    <Content Include="assets\owlcarousel\owl.carousel.min.js" />
+    <Content Include="assets\owlcarousel\owl.js" />
+    <Content Include="assets\owlcarousel\owl2.js" />
+    <Content Include="assets\vendors\foundation.min.js" />
+    <Content Include="assets\vendors\highlight.js" />
+    <Content Include="assets\vendors\jquery.min.js" />
+    <Content Include="assets\vendors\jquery.mousewheel.min.js" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\carousel.css" />
+    <Content Include="Content\cour.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\StyleSheet1.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="images\a1.jpg" />
+    <Content Include="images\a10.jpg" />
+    <Content Include="images\a2.jpg" />
+    <Content Include="images\a3.jpg" />
+    <Content Include="images\a4.jpg" />
+    <Content Include="images\a5.jpg" />
+    <Content Include="images\a6.jpg" />
+    <Content Include="images\a7.jpg" />
+    <Content Include="images\a8.jpg" />
+    <Content Include="images\a9.jpg" />
+    <Content Include="images\b1.jpg" />
+    <Content Include="images\b10.jpg" />
+    <Content Include="images\b2.jpg" />
+    <Content Include="images\b3.jpg" />
+    <Content Include="images\b4.jpg" />
+    <Content Include="images\b5.jpg" />
+    <Content Include="images\b6.jpg" />
+    <Content Include="images\b7.jpg" />
+    <Content Include="images\b8.jpg" />
+    <Content Include="images\b9.jpg" />
+    <Content Include="images\1.jpg" />
+    <Content Include="images\10.jpeg" />
+    <Content Include="images\2.jpg" />
+    <Content Include="images\3.jpg" />
+    <Content Include="images\4.jpg" />
+    <Content Include="images\5.jpg" />
+    <Content Include="images\6.jpg" />
+    <Content Include="images\7.jpg" />
+    <Content Include="images\8.jpg" />
+    <Content Include="images\9.jpg" />
+    <Content Include="img\1.jpg" />
+    <Content Include="img\10.jpeg" />
+    <Content Include="img\1031482269.jpg" />
+    <Content Include="img\10314822699.jpg" />
+    <Content Include="img\125443.jpg" />
+    <Content Include="img\1920\c-navigator-horizontal.png" />
+    <Content Include="img\1920\c-phone-horizontal.png" />
+    <Content Include="img\1920\c-slide-1.jpg" />
+    <Content Include="img\1920\c-slide-3.jpg" />
+    <Content Include="img\1920\hand.png" />
+    <Content Include="img\1s.png" />
+    <Content Include="img\1ss.jpg" />
+    <Content Include="img\1sy.jpg" />
+    <Content Include="img\2.jpg" />
+    <Content Include="img\2s.jpg" />
+    <Content Include="img\3.jpg" />
+    <Content Include="img\3s.jpeg" />
+    <Content Include="img\3s.jpg" />
+    <Content Include="img\4.jpg" />
+    <Content Include="img\4s.jpeg" />
+    <Content Include="img\5.jpg" />
+    <Content Include="img\5s.jpeg" />
+    <Content Include="img\6.jpg" />
+    <Content Include="img\6603.jpg" />
+    <Content Include="img\7.jpg" />
+    <Content Include="img\8.jpg" />
+    <Content Include="img\9.jpg" />
+    <Content Include="img\a1.jpg" />
+    <Content Include="img\a10.jpg" />
+    <Content Include="img\a2.jpg" />
+    <Content Include="img\a3.jpg" />
+    <Content Include="img\a4.jpg" />
+    <Content Include="img\a5.jpg" />
+    <Content Include="img\a6.jpg" />
+    <Content Include="img\a7.jpg" />
+    <Content Include="img\a8.jpg" />
+    <Content Include="img\a9.jpg" />
+    <Content Include="img\akokmedya.jpg" />
+    <Content Include="img\arizatespit.png" />
+    <Content Include="img\arizatespit2.jpg" />
+    <Content Include="img\arizatespit3.jpg" />
+    <Content Include="img\ayakkabistok.jpg" />
+    <Content Include="img\ayakkabistok.png" />
+    <Content Include="img\aykkabistok2.jpg" />
+    <Content Include="img\aykkabistok2.png" />
+    <Content Include="img\b1.jpg" />
+    <Content Include="img\b10.jpg" />
+    <Content Include="img\b2.jpg" />
+    <Content Include="img\b3.jpg" />
+    <Content Include="img\b4.jpg" />
+    <Content Include="img\b5.jpg" />
+    <Content Include="img\b6.jpg" />
+    <Content Include="img\b7.jpg" />
+    <Content Include="img\b8.jpg" />
+    <Content Include="img\b9.jpg" />
+    <Content Include="img\bahri.jpg" />
+    <Content Include="img\best1.jpg" />
+    <Content Include="img\cafe-restoran %281%29.jpg" />
+    <Content Include="img\cafe-restoran.jpg" />
+    <Content Include="img\cafe-restoran2 %281%29.jpg" />
+    <Content Include="img\cafe-restoran2.jpg" />
+    <Content Include="img\cocuk.jpg" />
+    <Content Include="img\dashkit.jpg" />
+    <Content Include="img\depo.png" />
+    <Content Include="img\Dmo3gh8XoAEtdeN.jpg" />
+    <Content Include="img\etkinlikburadabeyaz.jpg" />
+    <Content Include="img\etkinlikburadabeyaz.png" />
+    <Content Include="img\gallery\1300x500\001.jpg" />
+    <Content Include="img\gallery\1300x500\002.jpg" />
+    <Content Include="img\gallery\1300x500\003.jpg" />
+    <Content Include="img\gallery\200x150\001.jpg" />
+    <Content Include="img\gallery\200x150\002.jpg" />
+    <Content Include="img\gallery\200x150\003.jpg" />
+    <Content Include="img\gallery\200x150\004.jpg" />
+    <Content Include="img\gallery\200x150\005.jpg" />
+    <Content Include="img\gallery\200x150\006.jpg" />
+    <Content Include="img\gallery\200x150\007.jpg" />
+    <Content Include="img\gallery\200x150\008.jpg" />
+    <Content Include="img\gallery\200x150\009.jpg" />
+    <Content Include="img\gallery\200x150\010.jpg" />
+    <Content Include="img\gallery\200x150\011.jpg" />
+    <Content Include="img\gallery\200x150\012.jpg" />
+    <Content Include="img\gallery\200x150\013.jpg" />
+    <Content Include="img\gallery\200x150\014.jpg" />
+    <Content Include="img\gallery\200x150\015.jpg" />
+    <Content Include="img\gallery\200x150\016.jpg" />
+    <Content Include="img\gallery\200x150\017.jpg" />
+    <Content Include="img\gallery\200x150\018.jpg" />
+    <Content Include="img\gallery\200x150\019.jpg" />
+    <Content Include="img\gallery\200x150\020.jpg" />
+    <Content Include="img\gallery\200x150\021.jpg" />
+    <Content Include="img\gallery\200x150\022.jpg" />
+    <Content Include="img\gallery\200x150\023.jpg" />
+    <Content Include="img\gallery\200x150\024.jpg" />
+    <Content Include="img\gallery\200x150\025.jpg" />
+    <Content Include="img\gallery\200x150\026.jpg" />
+    <Content Include="img\gallery\200x150\027.jpg" />
+    <Content Include="img\gallery\600x240\001.jpg" />
+    <Content Include="img\gallery\600x240\013.jpg" />
+    <Content Include="img\gallery\640x960\001.jpg" />
+    <Content Include="img\gallery\640x960\002.jpg" />
+    <Content Include="img\gallery\640x960\003.jpg" />
+    <Content Include="img\gallery\640x960\004.jpg" />
+    <Content Include="img\gallery\640x960\005.jpg" />
+    <Content Include="img\gallery\640x960\006.jpg" />
+    <Content Include="img\gallery\640x960\007.jpg" />
+    <Content Include="img\gallery\640x960\008.jpg" />
+    <Content Include="img\gallery\720x480\001.jpg" />
+    <Content Include="img\gallery\720x480\002.jpg" />
+    <Content Include="img\gallery\720x480\003.jpg" />
+    <Content Include="img\gallery\720x480\004-s99x66.jpg" />
+    <Content Include="img\gallery\720x480\004.jpg" />
+    <Content Include="img\gallery\720x480\005-s99x66.jpg" />
+    <Content Include="img\gallery\720x480\005.jpg" />
+    <Content Include="img\gallery\720x480\006-s99x66.jpg" />
+    <Content Include="img\gallery\720x480\006.jpg" />
+    <Content Include="img\gallery\720x480\007-s99x66.jpg" />
+    <Content Include="img\gallery\720x480\007.jpg" />
+    <Content Include="img\gallery\720x480\008-s99x66.jpg" />
+    <Content Include="img\gallery\720x480\008.jpg" />
+    <Content Include="img\gallery\720x480\009-s99x66.jpg" />
+    <Content Include="img\gallery\720x480\009.jpg" />
+    <Content Include="img\gallery\720x480\010-s99x66.jpg" />
+    <Content Include="img\gallery\720x480\010.jpg" />
+    <Content Include="img\gallery\720x480\011.jpg" />
+    <Content Include="img\gallery\720x480\012.jpg" />
+    <Content Include="img\gallery\720x480\013-s99x66.jpg" />
+    <Content Include="img\gallery\720x480\013.jpg" />
+    <Content Include="img\gallery\720x480\014-s99x66.jpg" />
+    <Content Include="img\gallery\720x480\014.jpg" />
+    <Content Include="img\gallery\720x480\015-s99x66.jpg" />
+    <Content Include="img\gallery\720x480\015.jpg" />
+    <Content Include="img\gallery\720x480\016-s99x66.jpg" />
+    <Content Include="img\gallery\720x480\016.jpg" />
+    <Content Include="img\gallery\720x480\017-s99x66.jpg" />
+    <Content Include="img\gallery\720x480\017.jpg" />
+    <Content Include="img\gallery\720x480\018-s99x66.jpg" />
+    <Content Include="img\gallery\720x480\018.jpg" />
+    <Content Include="img\gallery\720x480\019.jpg" />
+    <Content Include="img\gallery\720x480\020.jpg" />
+    <Content Include="img\gallery\720x480\021.jpg" />
+    <Content Include="img\gallery\720x480\022.jpg" />
+    <Content Include="img\gallery\960x640\001.jpg" />
+    <Content Include="img\gallery\960x640\002.jpg" />
+    <Content Include="img\gallery\960x640\003.jpg" />
+    <Content Include="img\gallery\960x640\004.jpg" />
+    <Content Include="img\gallery\960x640\005.jpg" />
+    <Content Include="img\gallery\960x640\006.jpg" />
+    <Content Include="img\gallery\960x640\007.jpg" />
+    <Content Include="img\gallery\960x640\008.jpg" />
+    <Content Include="img\gallery\980x380\001.jpg" />
+    <Content Include="img\gallery\980x380\002.jpg" />
+    <Content Include="img\gallery\980x380\003.jpg" />
+    <Content Include="img\gallery\980x380\004.jpg" />
+    <Content Include="img\gallery\980x380\005.jpg" />
+    <Content Include="img\gallery\980x380\006.jpg" />
+    <Content Include="img\gallery\980x380\007.jpg" />
+    <Content Include="img\gallery\980x380\008.jpg" />
+    <Content Include="img\gallery\980x380\009.jpg" />
+    <Content Include="img\gallery\980x380\010.jpg" />
+    <Content Include="img\gallery\980x380\011.jpg" />
+    <Content Include="img\gallery\980x380\012.jpg" />
+    <Content Include="img\gallery\980x380\013.jpg" />
+    <Content Include="img\gallery\980x380\014.jpg" />
+    <Content Include="img\gallery\980x380\015.jpg" />
+    <Content Include="img\gallery\980x380\016.jpg" />
+    <Content Include="img\gallery\980x380\017.jpg" />
+    <Content Include="img\gallery\980x380\018.jpg" />
+    <Content Include="img\gallery\980x380\019.jpg" />
+    <Content Include="img\gallery\980x380\020.jpg" />
+    <Content Include="img\gallery\980x380\021.jpg" />
+    <Content Include="img\gallery\980x380\022.jpg" />
+    <Content Include="img\gallery\980x380\023.jpg" />
+    <Content Include="img\gallery\980x380\024.jpg" />
+    <Content Include="img\gallery\980x380\025.jpg" />
+    <Content Include="img\gallery\980x380\026.jpg" />
+    <Content Include="img\gallery\980x380\027.jpg" />
+    <Content Include="img\gallery\980x380\028.jpg" />
+    <Content Include="img\gallery\980x380\029.jpg" />
+    <Content Include="img\gallery\980x380\030.jpg" />
+    <Content Include="img\gallery\980x380\031-s190x90.jpg" />
+    <Content Include="img\gallery\980x380\031.jpg" />
+    <Content Include="img\gallery\980x380\032-s190x90.jpg" />
+    <Content Include="img\gallery\980x380\032.jpg" />
+    <Content Include="img\gallery\980x380\033-s190x90.jpg" />
+    <Content Include="img\gallery\980x380\033.jpg" />
+    <Content Include="img\gallery\980x380\034-s190x90.jpg" />
+    <Content Include="img\gallery\980x380\034.jpg" />
+    <Content Include="img\gallery\980x380\035-s190x90.jpg" />
+    <Content Include="img\gallery\980x380\035.jpg" />
+    <Content Include="img\gallery\980x380\036-s190x90.jpg" />
+    <Content Include="img\gallery\980x380\036.jpg" />
+    <Content Include="img\gallery\980x380\037-s190x90.jpg" />
+    <Content Include="img\gallery\980x380\037.jpg" />
+    <Content Include="img\gallery\980x380\038-s190x90.jpg" />
+    <Content Include="img\gallery\980x380\038.jpg" />
+    <Content Include="img\gallery\980x380\039-s190x90.jpg" />
+    <Content Include="img\gallery\980x380\039.jpg" />
+    <Content Include="img\gallery\980x380\040-s190x90.jpg" />
+    <Content Include="img\gallery\980x380\040.jpg" />
+    <Content Include="img\gallery\980x380\041.jpg" />
+    <Content Include="img\gallery\980x380\042.jpg" />
+    <Content Include="img\gallery\980x380\043.jpg" />
+    <Content Include="img\gallery\980x380\044.jpg" />
+    <Content Include="img\gallery\980x380\045.jpg" />
+    <Content Include="img\gallery\980x380\046.jpg" />
+    <Content Include="img\gallery\980x380\047.jpg" />
+    <Content Include="img\gallery\980x380\048.jpg" />
+    <Content Include="img\gallery\980x380\049.jpg" />
+    <Content Include="img\gallery\980x380\050.jpg" />
+    <Content Include="img\gallery\980x380\051.jpg" />
+    <Content Include="img\gallery\980x380\052.jpg" />
+    <Content Include="img\gezi.jpg" />
+    <Content Include="img\guncel2.jpg" />
+    <Content Include="img\hdm1.jpg" />
+    <Content Include="img\hdminsaat.jpg" />
+    <Content Include="img\hdminsaat.png" />
+    <Content Include="img\hdmyapi.jpg" />
+    <Content Include="img\hdmyapi.png" />
+    <Content Include="img\hdmyapi2.jpg" />
+    <Content Include="img\hdmyapi22.jpg" />
+    <Content Include="img\icons\icon_chrome.png" />
+    <Content Include="img\icons\icon_firefox.png" />
+    <Content Include="img\icons\icon_ie.png" />
+    <Content Include="img\icons\icon_opera.png" />
+    <Content Include="img\icons\icon_safari.png" />
+    <Content Include="img\iletisim.png" />
+    <Content Include="img\ipad.png" />
+    <Content Include="img\iphn\ipad.png" />
+    <Content Include="img\iphn\ipadmini.png" />
+    <Content Include="img\iphn\ipadpro.png" />
+    <Content Include="img\iphn\iphone7.png" />
+    <Content Include="img\iphn\iphone8.png" />
+    <Content Include="img\iphn\iphonex-TA.jpg" />
+    <Content Include="img\iphn\iphonexr.png" />
+    <Content Include="img\iphn\iphonexs.png" />
+    <Content Include="img\iphn\mac.png" />
+    <Content Include="img\iphone-xr-yellow-select-201809.png" />
+    <Content Include="img\iphone8-plus-spgray-select-2018.png" />
+    <Content Include="img\iphone8-plus-spgray-select-20189.png" />
+    <Content Include="img\iphone8.png" />
+    <Content Include="img\iphonec.png" />
+    <Content Include="img\iphonedonma.jpg" />
+    <Content Include="img\iphonehizlisarj.png" />
+    <Content Include="img\iphonehome.jpg" />
+    <Content Include="img\iphoneisinmasorunu.jpg" />
+    <Content Include="img\iphonekamera.jpg" />
+    <Content Include="img\iphonekurtarma.jpg" />
+    <Content Include="img\iphonepil.jpg" />
+    <Content Include="img\iphonerehber.jpg" />
+    <Content Include="img\iphonesarj.jpg" />
+    <Content Include="img\iphonesifrekirma.jpg" />
+    <Content Include="img\iPhonesivi.jpg" />
+    <Content Include="img\iphonewifi.png" />
+    <Content Include="img\iphonex-TA.jpg" />
+    <Content Include="img\iphonex-TAa.jpg" />
+    <Content Include="img\iphonexr.png" />
+    <Content Include="img\iphonexs.png" />
+    <Content Include="img\iphoneyazilim.jpg" />
+    <Content Include="img\konser.jpg" />
+    <Content Include="img\Lokmaris.jpg" />
+    <Content Include="img\Lokmaris2.jpg" />
+    <Content Include="img\maddeler.png" />
+    <Content Include="img\maddeler2.png" />
+    <Content Include="img\nophoto.jpg" />
+    <Content Include="img\pb-beer-1513436-1600.jpg" />
+    <Content Include="img\present\01.jpg" />
+    <Content Include="img\present\01\arrow-left.png" />
+    <Content Include="img\present\01\arrow-right.png" />
+    <Content Include="img\present\01\butterfly-blue.png" />
+    <Content Include="img\present\01\butterfly-dark-yellow.png" />
+    <Content Include="img\present\01\butterfly-light-yellow.png" />
+    <Content Include="img\present\01\butterfly-red.png" />
+    <Content Include="img\present\01\dot.png" />
+    <Content Include="img\present\01\layer-blurred-white.png" />
+    <Content Include="img\present\01\main.jpg" />
+    <Content Include="img\present\02.jpg" />
+    <Content Include="img\present\02\circle-hollow.png" />
+    <Content Include="img\present\02\circle-solid.png" />
+    <Content Include="img\present\02\hand.png" />
+    <Content Include="img\present\02\ipad.png" />
+    <Content Include="img\present\02\ipadmini.png" />
+    <Content Include="img\present\02\ipadpro.png" />
+    <Content Include="img\present\02\iphone7.png" />
+    <Content Include="img\present\02\iphone8.png" />
+    <Content Include="img\present\02\iphonexr.png" />
+    <Content Include="img\present\02\iphonexrr.png" />
+    <Content Include="img\present\02\iphonexs.png" />
+    <Content Include="img\present\02\mac.png" />
+    <Content Include="img\present\02\mock-ipad.png" />
+    <Content Include="img\present\02\mock-laptop.png" />
+    <Content Include="img\present\02\mock-pc.png" />
+    <Content Include="img\present\02\mock-phone-slider-flat.jpg" />
+    <Content Include="img\present\02\mock-phone-slider-flatt.jpg" />
+    <Content Include="img\present\02\mock-phone.png" />
+    <Content Include="img\present\02\swipe-arrow.png" />
+    <Content Include="img\present\03.jpg" />
+    <Content Include="img\present\03\android.png" />
+    <Content Include="img\present\03\apple.jpg" />
+    <Content Include="img\present\03\apple.png" />
+    <Content Include="img\present\03\Asus.jpg" />
+    <Content Include="img\present\03\Asus.png" />
+    <Content Include="img\present\03\chrome.png" />
+    <Content Include="img\present\03\circle.png" />
+    <Content Include="img\present\03\edge.png" />
+    <Content Include="img\present\03\firefox.png" />
+    <Content Include="img\present\03\hexagon-hollow-big.png" />
+    <Content Include="img\present\03\hexagon-hollow.png" />
+    <Content Include="img\present\03\hexagon-solid-yellow.png" />
+    <Content Include="img\present\03\hexagon-solid.png" />
+    <Content Include="img\present\03\honor.jpg" />
+    <Content Include="img\present\03\honor.png" />
+    <Content Include="img\present\03\htc.jpg" />
+    <Content Include="img\present\03\htc.png" />
+    <Content Include="img\present\03\Huawei.jpg" />
+    <Content Include="img\present\03\Huawei.png" />
+    <Content Include="img\present\03\ie.png" />
+    <Content Include="img\present\03\ios.png" />
+    <Content Include="img\present\03\meizu.jpg" />
+    <Content Include="img\present\03\meizu.png" />
+    <Content Include="img\present\03\nokia.jpg" />
+    <Content Include="img\present\03\nokia.png" />
+    <Content Include="img\present\03\opera.png" />
+    <Content Include="img\present\03\safari.png" />
+    <Content Include="img\present\03\samsung.jpg" />
+    <Content Include="img\present\03\samsung.png" />
+    <Content Include="img\present\03\sony.jpg" />
+    <Content Include="img\present\03\windows.png" />
+    <Content Include="img\present\03\xiaomi.jpg" />
+    <Content Include="img\present\04.jpg" />
+    <Content Include="img\px-apartment-chairs-contemporary-2015560-1600.jpg" />
+    <Content Include="img\px-back-view-boats-couple-2612852-1600.jpg" />
+    <Content Include="img\qr\jssor.com.png" />
+    <Content Include="img\resim.jpg" />
+    <Content Include="img\responsive.png" />
+    <Content Include="img\sag.png" />
+    <Content Include="img\sebekezayifligi.jpg" />
+    <Content Include="img\sfaq-iphone_2x.png" />
+    <Content Include="img\spin.svg" />
+    <Content Include="img\stokprogrami-1.jpg" />
+    <Content Include="img\stokprogrami-2.jpg" />
+    <Content Include="img\stokprogrami-3 %281%29.jpg" />
+    <Content Include="img\stokprogrami-3.jpg" />
+    <Content Include="img\stokprogrami-4.jpg" />
+    <Content Include="img\stokprogrami.jpg" />
+    <Content Include="img\telefon-ekran-degisimi.png" />
+    <Content Include="img\telefon-ekran-degisimi2.jpg" />
+    <Content Include="img\thumbnail_r-7.jpg" />
+    <Content Include="img\tiyatro.jpg" />
+    <Content Include="img\top.png" />
+    <Content Include="img\website-fiyatlari.png" />
+    <Content Include="img\whatsapp-icon-logo-8CA4FB831E-seeklogo.com.png" />
+    <Content Include="img\whatsapp.png" />
+    <Content Include="img\wine-1600.jpg" />
+    <Content Include="img\wine-atlantic-ocean.png" />
+    <Content Include="img\wine-badge.png" />
+    <Content Include="img\yamamoto.jpg" />
+    <Content Include="img\yazar.jpg" />
+    <Content Include="img\yazilimciburada.png" />
+    <Content Include="img\yazilimciburadabeyaz.png" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="assets\owlcarousel\README.md" />
+    <Content Include="assets\vendors\jquery.min.map" />
+    <Content Include="img\Untitled-2.psd" />
+    <None Include="Scripts\jquery-3.6.0.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.6.0.js" />
+    <Content Include="Scripts\jquery-3.6.0.min.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.js" />
+    <Content Include="Scripts\jssor.slider-28.0.0.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Views\Home\Kaydedilenler.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\EventController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\category.cs" />
+    <Compile Include="Models\city.cs" />
+    <Compile Include="Models\events.cs" />
+    <Compile Include="Models\photos.cs" />
+    <Compile Include="Models\place.cs" />
+    <Compile Include="Models\search.cs" />
+    <Compile Include="Models\Veritabani.cs" />
+    <Compile Include="Models\veritabani2.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.6.0.min.map" />
+    <Content Include="Views\Home\partiel2.cshtml" />
+    <Content Include="Views\Home\Eventsdetail.cshtml" />
+    <Content Include="Views\Home\categoriespartiel.cshtml" />
+    <Content Include="Views\Home\searchevent.cshtml" />
+    <Content Include="Views\Home\filtrele.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\partiel\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64102</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44308/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
